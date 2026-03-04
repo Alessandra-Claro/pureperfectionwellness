@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pure Perfection Wellness</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background-color: #fff6fb;
+  background: linear-gradient(to bottom, #fff6fb, #ffe6f2);
   color: #222;
 }
 
@@ -21,13 +21,14 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 25px 60px;
-  background: #fff;
+  background: white;
 }
 
 .logo {
   font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
-  font-weight: 600;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ff2e93;
 }
 
 nav a {
@@ -39,49 +40,51 @@ nav a {
 }
 
 nav a:hover {
-  color: #ff66b2;
+  color: #ff2e93;
 }
 
 .hero {
   text-align: center;
-  padding: 120px 20px;
-  background: linear-gradient(to bottom, #ffe6f2, #fff6fb);
+  padding: 140px 20px;
+  background: linear-gradient(to bottom, #ffd6ec, #fff6fb);
 }
 
 .hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  margin-bottom: 15px;
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  color: #ff2e93;
 }
 
 .hero p {
   font-size: 1.2rem;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 
 .btn {
-  padding: 12px 30px;
+  padding: 14px 35px;
   border: none;
-  background-color: #ff66b2;
+  background-color: #ff2e93;
   color: white;
   font-size: 1rem;
   cursor: pointer;
-  border-radius: 30px;
+  border-radius: 40px;
   transition: 0.3s;
 }
 
 .btn:hover {
-  background-color: #e0559d;
+  background-color: #d81b7d;
 }
 
 .products {
-  padding: 80px 60px;
+  padding: 100px 60px;
   text-align: center;
 }
 
 .products h2 {
   font-family: 'Playfair Display', serif;
-  margin-bottom: 40px;
+  font-size: 2.2rem;
+  margin-bottom: 60px;
 }
 
 .product-grid {
@@ -93,46 +96,73 @@ nav a:hover {
 
 .product {
   background: white;
-  padding: 25px;
+  padding: 30px;
   width: 280px;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(255, 102, 178, 0.1);
+  border-radius: 25px;
+  box-shadow: 0 12px 25px rgba(255, 46, 147, 0.08);
   transition: 0.3s;
 }
 
 .product:hover {
-  transform: translateY(-5px);
-}
-
-.product img {
-  width: 100%;
-  border-radius: 15px;
-  margin-bottom: 15px;
+  transform: translateY(-6px);
 }
 
 .product h3 {
   font-family: 'Playfair Display', serif;
+  margin-bottom: 15px;
+  color: #ff2e93;
+}
+
+.product p {
+  font-size: 0.95rem;
   margin-bottom: 10px;
 }
 
-.product span {
-  display: block;
+.price {
+  font-weight: 600;
   margin-top: 10px;
-  font-weight: 500;
-  color: #ff66b2;
+  color: #ff2e93;
+}
+
+.badge {
+  display: inline-block;
+  padding: 5px 12px;
+  background: #ffe6f2;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-top: 8px;
+}
+
+.location {
+  font-size: 0.9rem;
+  margin-top: 10px;
 }
 
 .about {
-  padding: 80px 60px;
-  background: #ffe6f2;
+  padding: 100px 60px;
+  background: #ffd6ec;
   text-align: center;
+}
+
+.about h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
 }
 
 .footer {
   text-align: center;
-  padding: 30px;
-  background: #fff;
-  font-size: 0.9rem;
+  padding: 40px;
+  background: white;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+  }
+  nav {
+    margin-top: 15px;
+  }
 }
 
 </style>
@@ -143,56 +173,63 @@ nav a:hover {
 <header class="header">
   <div class="logo">Pure Perfection</div>
   <nav>
-    <a href="#products">Products</a>
+    <a href="#products">Shop</a>
     <a href="#about">About</a>
-    <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <section class="hero">
   <h1>Soft Power. Structured Discipline.</h1>
-  <p>Diva-Level Wellness for the Modern Woman.</p>
+  <p>Diva-level wellness, structure, and sweet indulgence.</p>
   <button class="btn">Shop Now</button>
 </section>
 
 <section id="products" class="products">
-  <h2>Our Essentials</h2>
+  <h2>Shop The Essentials</h2>
 
   <div class="product-grid">
+
     <div class="product">
-      <img src="assets/product1.jpg" alt="Glow Serum">
-      <h3>Diva Glow Serum</h3>
-      <p>Radiance-enhancing formula for confident skin.</p>
-      <span>$48</span>
+      <h3>IT GIRL Wellness Workbook</h3>
+      <p>Digital transformation system including body, habit, sleep & cycle tracking.</p>
+      <div class="price">$12</div>
+      <div class="badge">Digital Download</div>
     </div>
 
     <div class="product">
-      <img src="assets/product2.jpg" alt="Discipline Planner">
-      <h3>Structured Discipline Planner</h3>
-      <p>Luxury planning for powerful execution.</p>
-      <span>$35</span>
+      <h3>Diva Bracelets</h3>
+      <p>Handmade feminine energy bracelets.</p>
+      <div class="badge">Pickup Only</div>
+      <div class="location">📍 2041 Wilton Dr, Wilton Manors, FL 33305</div>
     </div>
 
     <div class="product">
-      <img src="assets/product3.jpg" alt="Wellness Guide">
-      <h3>Soft Power Wellness Guide</h3>
-      <p>Your blueprint to elevated living.</p>
-      <span>$29</span>
+      <h3>Dairy-Free Brownies</h3>
+      <p>Full Brownie – $4<br>Brownie Bite – $1</p>
+      <p>Treat yourself to a delicious dairy-free dessert without worrying about dairy.</p>
+      <div class="badge">Pickup Only</div>
     </div>
+
+    <div class="product">
+      <h3>Motivational Bookmarks</h3>
+      <p>10 for $5</p>
+      <div class="badge">Upcoming</div>
+    </div>
+
   </div>
 </section>
 
 <section id="about" class="about">
-  <h2>About The Brand</h2>
+  <h2>About Pure Perfection</h2>
   <p>
-    Pure Perfection Wellness was created for women who value elegance,
-    discipline, and self-mastery. This is not just wellness.
-    This is identity elevation.
+    Pure Perfection Wellness is a pink-powered space for discipline, transformation,
+    and intentional indulgence. From structured wellness systems to sweet dairy-free treats,
+    this is where elegance meets execution.
   </p>
 </section>
 
 <footer class="footer">
-  <p>© 2026 Pure Perfection Wellness</p>
+  © 2026 Pure Perfection Wellness | Wilton Manors, FL
 </footer>
 
 </body>
