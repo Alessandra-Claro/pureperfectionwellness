@@ -3,239 +3,273 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pure Perfection Wellness</title>
+<title>PW. Perfect Wellness | Elevated Living</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: linear-gradient(to bottom, #fff6fb, #ffe6f2);
-  color: #222;
+:root {
+    --primary: #ff2e93;
+    --primary-dark: #d81b7d;
+    --secondary: #ffe6f2;
+    --accent: #ffd6ec;
+    --text-dark: #1a1a1a;
+    --text-light: #555;
+    --white: #ffffff;
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #fffafc;
+    color: var(--text-dark);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* Navigation */
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 25px 60px;
-  background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 46, 147, 0.1);
 }
 
 .logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #ff2e93;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary);
 }
 
 nav a {
-  margin-left: 30px;
-  text-decoration: none;
-  color: #222;
-  font-weight: 400;
-  transition: 0.3s;
+    margin-left: 35px;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
 }
 
-nav a:hover {
-  color: #ff2e93;
-}
+nav a:hover { color: var(--primary); }
 
+/* Hero */
 .hero {
-  text-align: center;
-  padding: 140px 20px;
-  background: linear-gradient(to bottom, #ffd6ec, #fff6fb);
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle at top right, #fff6fb, #ffd6ec);
+    padding: 0 20px;
+    margin-top: 80px;
 }
 
 .hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3.5rem;
-  margin-bottom: 20px;
-  color: #ff2e93;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    margin-bottom: 20px;
+    max-width: 800px;
+    line-height: 1.1;
 }
 
 .hero p {
-  font-size: 1.2rem;
-  margin-bottom: 35px;
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 40px;
+    font-weight: 300;
 }
 
 .btn {
-  padding: 14px 35px;
-  border: none;
-  background-color: #ff2e93;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 40px;
-  transition: 0.3s;
+    padding: 16px 40px;
+    border: none;
+    background-color: var(--primary);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 50px;
+    box-shadow: 0 10px 20px rgba(255, 46, 147, 0.2);
+    transition: var(--transition);
 }
 
 .btn:hover {
-  background-color: #d81b7d;
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(255, 46, 147, 0.3);
 }
 
+/* Products */
 .products {
-  padding: 100px 60px;
-  text-align: center;
+    padding: 120px 8%;
 }
 
-.products h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.2rem;
-  margin-bottom: 60px;
+.section-title {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.section-title h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+.section-title .line {
+    width: 60px;
+    height: 3px;
+    background: var(--primary);
+    margin: 0 auto;
 }
 
 .product-grid {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
 .product {
-  background: white;
-  padding: 30px;
-  width: 280px;
-  border-radius: 25px;
-  box-shadow: 0 12px 25px rgba(255, 46, 147, 0.08);
-  transition: 0.3s;
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .product:hover {
-  transform: translateY(-6px);
+    border-color: var(--secondary);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
 }
 
 .product h3 {
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 15px;
-  color: #ff2e93;
-}
-
-.product p {
-  font-size: 0.95rem;
-  margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
 }
 
 .price {
-  font-weight: 600;
-  margin-top: 10px;
-  color: #ff2e93;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 20px 0;
 }
 
 .badge {
-  display: inline-block;
-  padding: 5px 12px;
-  background: #ffe6f2;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  margin-top: 8px;
+    align-self: flex-start;
+    padding: 6px 16px;
+    background: var(--secondary);
+    color: var(--primary-dark);
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
-.location {
-  font-size: 0.9rem;
-  margin-top: 10px;
-}
-
-.about {
-  padding: 100px 60px;
-  background: #ffd6ec;
-  text-align: center;
-}
-
-.about h2 {
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 20px;
-}
-
+/* Footer */
 .footer {
-  text-align: center;
-  padding: 40px;
-  background: white;
-  font-size: 0.85rem;
+    background: #1a1a1a;
+    color: #888;
+    padding: 80px 8% 40px;
+    text-align: center;
+}
+
+.footer-logo {
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
 }
 
 @media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-  }
-  nav {
-    margin-top: 15px;
-  }
+    .hero h1 { font-size: 2.5rem; }
 }
-
 </style>
 </head>
 
 <body>
 
 <header class="header">
-  <div class="logo">Pure Perfection Wellness</div>
-  <nav>
-    <a href="#products">Shop</a>
-    <a href="#about">About</a>
-  </nav>
+    <div class="logo">PW.</div>
+    <nav>
+        <a href="#products">Collection</a>
+        <a href="#contact">Contact</a>
+    </nav>
 </header>
 
 <section class="hero">
-  <h1>Pure Perfection Wellness.</h1>
-  <p>Diva-level wellness, structure, and sweet indulgence.</p>
-  <button class="btn">Shop Now</button>
+    <div class="badge" style="margin-bottom: 20px;">Est. 2026</div>
+    <h1>Elegance in Discipline.<br><i>Perfection in Wellness.</i></h1>
+    <p>Premium systems and treats for the modern visionary.</p>
+    <button class="btn" onclick="document.getElementById('products').scrollIntoView()">Explore Shop</button>
 </section>
 
 <section id="products" class="products">
-  <h2>Shop The Essentials</h2>
-
-  <div class="product-grid">
-
-    <div class="product">
-      <h3>IT GIRL Wellness Workbook</h3>
-      <p>Digital transformation system including body, habit, sleep & cycle tracking.</p>
-      <div class="price">$12</div>
-      <div class="badge">Digital Download</div>
+    <div class="section-title">
+        <h2>The Essentials</h2>
+        <div class="line"></div>
     </div>
 
-    <div class="product">
-      <h3>Bracelets</h3>
-      <p>Handmade bracelets.</p>
-      <p>Price Range: $3 - $5.</p>
-      <div class="badge">Pickup Only</div>
-      <div class="location">📍 2041 Wilton Dr, Wilton Manors, FL 33305</div>
+    <div class="product-grid">
+        <div class="product">
+            <div>
+                <div class="badge">Digital</div>
+                <h3>IT GIRL Wellness Workbook</h3>
+                <p>A structured digital system for habit mastery, body tracking, and alignment.</p>
+            </div>
+            <div>
+                <div class="price">$12.00</div>
+                <button class="btn" style="width:100%; padding: 12px;">Buy Now</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <div>
+                <div class="badge">Local Pickup</div>
+                <h3>Artisan Bracelets</h3>
+                <p>Hand-crafted aesthetic pieces. Elegant and durable.</p>
+            </div>
+            <div>
+                <div class="price">$3.00 — $5.00</div>
+                <p style="font-size: 0.8rem; color: #999;">📍 2041 Wilton Dr, Wilton Manors, FL</p>
+            </div>
+        </div>
+
+        <div class="product">
+            <div>
+                <div class="badge">Dairy-Free</div>
+                <h3>Signature Brownies</h3>
+                <p>Gourmet dairy-free indulgence. Sweet, rich, and satisfying.</p>
+            </div>
+            <div>
+                <div class="price">$1.00 — $4.00</div>
+            </div>
+        </div>
     </div>
-
-    <div class="product">
-      <h3>Dairy-Free Brownies</h3>
-      <p>Full Brownie – $4<br>Brownie Bite – $1</p>
-      <p>Treat yourself to a delicious dairy-free dessert without worrying about dairy.</p>
-      <div class="badge">Pickup Only</div>
-      <div class="location">📍 2041 Wilton Dr, Wilton Manors, FL 33305</div>
-    </div>
-
-    <div class="product">
-      <h3>Motivational Bookmarks</h3>
-      <p>10 for $5</p>
-      <div class="badge">Upcoming</div>
-    </div>
-
-  </div>
-</section>
-
-<section id="about" class="about">
-  <h2>About Pure Perfection</h2>
-  <p>
-    Pure Perfection Wellness is a pink-powered space for discipline, transformation,
-    and intentional indulgence. From structured wellness systems to sweet dairy-free treats,
-    this is where elegance meets execution.
-  </p>
 </section>
 
 <footer class="footer">
-  © 2026 Pure Perfection Wellness | Wilton Manors, FL
+    <div class="footer-logo">PW. Perfect Wellness</div>
+    <p>Wilton Manors, Florida | Elevated Living</p>
+    <p style="font-size: 0.7rem; opacity: 0.5;">© 2026 PW. All Rights Reserved.</p>
 </footer>
 
 </body>
 </html>
-
-
-
