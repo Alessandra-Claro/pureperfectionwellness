@@ -1,53 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Purchase | PW</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<style>
-body {
-    font-family: 'Inter', sans-serif;
-    background: #fff6fb;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-.container {
-    background: white;
-    padding: 60px;
-    border-radius: 25px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.05);
-    text-align: center;
-    max-width: 500px;
-}
-h1 {
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 20px;
-}
-.price {
-    font-size: 2rem;
-    color: #ff2e93;
-    margin: 20px 0;
-}
-button {
-    padding: 14px 35px;
-    border: none;
-    background: linear-gradient(to right, #ff2e93, #ff5bb0);
-    color: white;
-    border-radius: 50px;
-    cursor: pointer;
-}
-</style>
+    <meta charset="UTF-8">
+    <title>Complete Purchase | PW</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fff6fb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+        .product-img {
+            width: 100%;
+            height: 250px;
+            object-fit: contain;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            background: #fdfdfd;
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 10px;
+            font-size: 1.6rem;
+        }
+        .price {
+            font-size: 2rem;
+            color: #ff2e93;
+            margin: 20px 0;
+            font-weight: 600;
+        }
+        button {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            background: linear-gradient(to right, #ff2e93, #ff5bb0);
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.2s;
+        }
+        button:active { transform: scale(0.98); }
+        .back-link {
+            display: block;
+            margin-top: 20px;
+            color: #999;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
-
 <body>
+
 <div class="container">
-    <h1>IT GIRL: Wellness Workbook</h1>
-    <p>Digital download. Instant access after purchase.</p>
-    <div class="price">$12.00</div>
-    <button>Pay with Card</button>
+    <img id="item-img" src="" alt="Product" class="product-img">
+    <h1 id="item-name">Loading...</h1>
+    <p>Digital Access / Local Pickup</p>
+    <div class="price" id="item-price">$0.00</div>
+    
+    <button id="checkout-button">Pay with Card</button>
+    
+    <a href="index.html" class="back-link">← Back to Shop</a>
 </div>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+    // 1. GET DATA FROM THE URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const name = urlParams.get('name') || "PW Product";
+    const price = urlParams.get('price') || "0.00";
+    const img = urlParams.get('img') || "images/default.jpg";
+
+    // 2. INJECT DATA INTO THE PAGE
+    document.getElementById('item-name').innerText = name;
+    document.getElementById('item-price').innerText = "$" + price;
+    document.getElementById('item-img').src = img;
+    document.title = "Purchase " + name + " | PW";
+
+    // 3. STRIPE LOGIC (To be finalized with your Stripe Keys)
+    const stripe = Stripe('YOUR_STRIPE_PUBLIC_KEY_HERE'); 
+
+    document.getElementById('checkout-button').addEventListener('click', function() {
+        // For now, this just alerts. 
+        // To make it work, you'll need to link this to a Stripe Checkout Session.
+        alert("Redirecting to secure payment for: " + name);
+    });
+</script>
+
 </body>
 </html>
